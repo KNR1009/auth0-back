@@ -12,7 +12,7 @@ class Api::V1::PostsController < SecuredController #SecuredContollerを継承す
   end
 
   def create
-    post = @current_user.posts.build(post_params)
+    post = @current_user.posts.new(post_params)
 
     if post.save
       render json: post
